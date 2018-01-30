@@ -1,5 +1,5 @@
 # Substitute
-Test Angular app for managing team subs.
+Manage sport team substitutions
 
 # Setup
 * npm or yarn install
