@@ -1,0 +1,72 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{title}}
+    </div>
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-2'>
+                <h3><button class='btn btn-primary'
+                      (click)='increaseOnField()'>
+                      Add Field
+                    </button></h3>
+            </div>
+            <div class='col-md-2'>
+                <h3><button class='btn btn-primary'
+                        (click)='resetField()'>
+                        Reset Field
+                    </button></h3>
+            </div>
+        </div>
+        <div class='table-responsive'>
+            <table class='table'>
+                <thead>
+                    <tr>
+                        <th class="col-md-1">SubCount</th>
+                        <th class="col-md-1">+</th>
+                        <th class="col-md-1">-</th>
+                        <th class="col-md-2">Player</th>
+                        <th class="col-md-1">+</th>
+                        <th class="col-md-1">-</th>
+                        <th class="col-md-5">OnField</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let player of players'>
+                      <th>{{player.subCount}}</th>  
+                      <th>
+                        <button class='btn btn-primary'
+                        [name]='player.id' 
+                        (click)='addSub($event)'>
+                          '+'
+                        </button>
+                      </th>
+                      <th>
+                          <button class='btn btn-primary'
+                          [name]='player.id'
+                          (click)='removeSub($event)'>
+                          '-'
+                          </button>
+                      </th>
+                      <th>{{player.name}}</th>
+                      <th>
+                          <button class='btn btn-primary'
+                          [name]='player.id'
+                          (click)='addField($event)'>
+                            '+'
+                          </button>
+                        </th>
+                        <th>
+                            <button class='btn btn-primary'
+                            [name]='player.id'
+                            (click)='removeField($event)'>
+                            '-'
+                            </button>
+                        </th>
+  
+                      <th>{{player.onField}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
